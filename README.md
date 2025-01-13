@@ -6,11 +6,9 @@ scripts on the website [http://www.imsdb.com](http://www.imsdb.com).
 ## To download
 
 ```
-git clone https://github.com/j2kun/imsdb_download_all_scripts
+git clone https://github.com/tmikus/imsdb_download_all_scripts
 cd imsdb_download_all_scripts
-virtualenv venv && source venv/bin/activate
-pip install -r requirements.txt
-python download_all_scripts.py
+./download_all_scripts.sh
 ```
 
 Takes about 15 minutes, downloads about 1,100 scripts.

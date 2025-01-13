@@ -48,14 +48,17 @@ def get_script(relative_link):
 
 
 if __name__ == "__main__":
-    response = requests.get('http://www.imsdb.com/all%20scripts/')
+    response = requests.get('https://imsdb.com/all-scripts.html')
     html = response.text
 
     soup = BeautifulSoup(html, "html.parser")
     paragraphs = soup.find_all('p')
 
     for p in paragraphs:
-        relative_link = p.a['href']
+        a_tag = p.find("a")
+        if not a_tag:
+            continue
+        relative_link = a_tag.get('href')
         title, script = get_script(relative_link)
         if not script:
             continue
